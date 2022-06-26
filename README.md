@@ -1,5 +1,3 @@
-��#� �D�A�W�-�G�Y�M�
-�
-�
+# GYM
 
 HOLAAAAAAAAAAAAAA FUE JOE ESTA LINEA
