@@ -1,276 +1,324 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="ejemplo de HTML5" />
-    <meta name="keywords" content="HTML5, CSS3, JavaScript" />
-    <title>Principal</title>
-    <link rel="stylesheet" href="css/general.css" />
 
-    <style>
-      #Banner {
-        height: 700px;
-        margin: 10px auto;
-        display: block;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="ejemplo de HTML5" />
+  <meta name="keywords" content="HTML5, CSS3, JavaScript" />
+  <title>Principal</title>
+  <link rel="stylesheet" href="css/general.css" />
 
-      /*CONTENIDO*/
-      .SUSCRIPCIONES {
-        background-color: rgb(22, 20, 20);
-      }
+  <style>
+    #Banner {
+      height: 700px;
+      margin: 10px auto;
+      display: block;
+    }
 
-      /*CSS Tarjetas*/
-      .SUSCRIPOPCIONES {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-      }
+    /*CONTENIDO*/
+    .SUSCRIPCIONES {
+      background-color: rgb(22, 20, 20);
+    }
 
-      .OPCIONES {
-        width: 25%;
-        padding: 1rem;
-        margin: 1rem;
-      }
+    /*CSS Tarjetas*/
+    .SUSCRIPOPCIONES {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
 
-      .OPCIONES,
-      p {
-        text-align: left;
-      }
+    .OPCIONES {
+      width: 25%;
+      padding: 1rem;
+      margin: 1rem;
+    }
 
-      .OPCIONES,
-      h5,
-      h6 {
-        text-align: center;
-      }
+    .OPCIONES,
+    p {
+      text-align: left;
+    }
 
-      .OPCIONES,
-      h4 {
-        color: palegoldenrod;
-      }
+    .OPCIONES,
+    h5,
+    h6 {
+      text-align: center;
+    }
 
-      .OPCIONES,
-      h6 {
-        color: green;
-      }
+    .OPCIONES,
+    h4 {
+      color: palegoldenrod;
+    }
 
-      .OPCIONES,
-      h5 {
-        color: yellow;
-      }
+    .OPCIONES,
+    h6 {
+      color: green;
+    }
 
-      .card {
-        background: cornflowerblue;
-        color: white;
-        padding: 1rem;
-        height: 100%;
-        transform: scale(1);
-        transition: all 1s;
-      }
+    .OPCIONES,
+    h5 {
+      color: yellow;
+    }
 
-      .card:hover {
-        /*efecto tarjeta aumentada*/
-        transform: scale(1.1);
-        background: rgb(141, 188, 206);
-        color: black;
-        transition: all 0.7s;
-      }
+    .card {
+      background: cornflowerblue;
+      color: white;
+      padding: 1rem;
+      height: 100%;
+      transform: scale(1);
+      transition: all 1s;
+    }
 
-      .text-center {
-        text-align: center;
-      }
+    .card:hover {
+      /*efecto tarjeta aumentada*/
+      transform: scale(1.1);
+      background: rgb(141, 188, 206);
+      color: black;
+      transition: all 0.7s;
+    }
 
-      /*Titulos*/
-      .title-2 {
-        display: block;
-        margin-bottom: 15px;
-        font-size: 4rem;
-        color: white;
-      }
+    .text-center {
+      text-align: center;
+    }
 
-      .title-3 {
-        font-size: 2rem;
-        color: white;
-      }
+    /*Titulos*/
+    .title-2 {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 4rem;
+      color: white;
+    }
 
-      .title-4 {
-        font-size: 1.3rem;
-        color: white;
-      }
+    .title-3 {
+      font-size: 2rem;
+      color: white;
+    }
 
-      article {
-        position: absolute;
-        margin-top: 70px;
-        margin-right: 200px;
-      }
+    .title-4 {
+      font-size: 1.3rem;
+      color: white;
+    }
 
-      /*CATEGORIAS*/
+    article {
+      position: absolute;
+      margin-top: 70px;
+      margin-right: 200px;
+    }
 
-      main {
-        max-width: 800px;
-        padding: 1rem;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 200px 200px 200px 200px;
-        grid-template-rows: 200px 200px 200px;
-        grid-gap: 1rem;
-      }
+    /*CATEGORIAS*/
 
-      .contenedor {
-        background-color: white;
-        margin: 3%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    main {
+      max-width: 800px;
+      padding: 1rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 200px 200px 200px 200px;
+      grid-template-rows: 200px 200px 200px;
+      grid-gap: 1rem;
+    }
 
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-      }
+    .contenedor {
+      background-color: white;
+      margin: 3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .item-a {
-        grid-row: 1 / 3;
-      }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
 
-      .item-b {
-        grid-column: 3 / 5;
-      }
+    .item-a {
+      grid-row: 1 / 3;
+    }
 
-      .item-c {
-        grid-row: 2 / 4;
-      }
+    .item-b {
+      grid-column: 3 / 5;
+    }
 
-      .item-d {
-        grid-column: 3 / 5;
-      }
-    </style>
-  </head>
+    .item-c {
+      grid-row: 2 / 4;
+    }
 
-  <body>
-    <header class="MENU_PRINCIPAL">
-      <img src="img/LOGO.png" alt="Logo UG-GYM" id="LOGO" />
-      <nav class="navegacion">
-        <ul class="menu">
-          <li><a href="index.html">➽ Inicio</a></li>
-          <li><a href="#">➽ Nosotros</a></li>
-          <li>
-            <a href="#">➽ Servicios</a>
-            <ul class="submenu">
-              <li><a href="html/servicioUno.html">➼ Servicio #1</a></li>
-              <li><a href="html/servicioDos.html">➼ Servicio #2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">➽ Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    .item-d {
+      grid-column: 3 / 5;
+    }
 
-    <div class="Banner">
-      <img src="img/BANNER.gif" alt="Banner UG-GYM" id="Banner" />
+    /*FOOTER*/
+    .footer {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgb(22, 20, 20);
+      text-align: center;
+      color: #f4f4f4;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icons {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .icons a {
+      text-decoration: none;
+      color: #f4f4f4;
+      margin: 15px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .company-name {
+      font-size: 1.6rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="MENU_PRINCIPAL">
+    <img src="img/LOGO.png" alt="Logo UG-GYM" id="LOGO" />
+    <nav class="navegacion">
+      <ul class="menu">
+        <li><a href="index.html">➽ Inicio</a></li>
+        <li><a href="#">➽ Nosotros</a></li>
+        <li>
+          <a href="#">➽ Servicios</a>
+          <ul class="submenu">
+            <li><a href="html/servicioUno.html">➼ Servicio #1</a></li>
+            <li><a href="html/servicioDos.html">➼ Servicio #2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">➽ Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="Banner">
+    <img src="img/BANNER.gif" alt="Banner UG-GYM" id="Banner" />
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <section class="SUSCRIPCIONES">
+    <br />
+    <h3 class="title-3 text-center">SUSCRIPCIONES</h3>
+    <div class="SUSCRIPOPCIONES">
+      <div class="OPCIONES">
+        <div class="card">
+          <h4 class="title-4 text-center">GRATIS</h4>
+          <h5>$O.OO</h5>
+          <br />
+          <p>➤ Acceso permanente a nuestros programas gratuitos.</p>
+          <p>➤ Registro sin costo y sin tarjeta.</p>
+        </div>
+      </div>
+      <div class="OPCIONES">
+        <div class="card">
+          <h4 class="title-4 text-center">MENSUAL</h4>
+          <h6>*CARGO MENSUAL*</h6>
+          <h5>$11.99</h5>
+          <br />
+          <p>
+            ➤ Todo lo que incluye gratis más acceso ilimitado a estrenos y
+            contenido premium para darte aún más variedad.
+          </p>
+          <p>
+            ➤ Disfruta de nuestra variedad de disciplinas: Fuerza, HIIT,
+            Cardio, Yoga, Meditación y Más.
+          </p>
+          <p>➤ Cancela cuando quieras sin costo.</p>
+        </div>
+      </div>
+      <div class="OPCIONES">
+        <div class="card">
+          <h4 class="title-4 text-center">ANUAL</h4>
+          <h6>*CARGO ANUAL*</h6>
+          <h5>$88.99</h5>
+          <br />
+          <p>
+            ➤ Todo lo que incluye gratis y mensual más acceso ilimitado a
+            estrenos y contenido premium para darte aún más variedad.
+          </p>
+          <p>➤ ¡Ahorra más de 50 dólares al pagar la anualidad!</p>
+          <p>➤ Cancela cuando quieras sin costo.</p>
+        </div>
+      </div>
     </div>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <section class="SUSCRIPCIONES">
-      <br />
-      <h3 class="title-3 text-center">SUSCRIPCIONES</h3>
-      <div class="SUSCRIPOPCIONES">
-        <div class="OPCIONES">
-          <div class="card">
-            <h4 class="title-4 text-center">GRATIS</h4>
-            <h5>$O.OO</h5>
-            <br />
-            <p>➤ Acceso permanente a nuestros programas gratuitos.</p>
-            <p>➤ Registro sin costo y sin tarjeta.</p>
-          </div>
-        </div>
-        <div class="OPCIONES">
-          <div class="card">
-            <h4 class="title-4 text-center">MENSUAL</h4>
-            <h6>*CARGO MENSUAL*</h6>
-            <h5>$11.99</h5>
-            <br />
-            <p>
-              ➤ Todo lo que incluye gratis más acceso ilimitado a estrenos y
-              contenido premium para darte aún más variedad.
-            </p>
-            <p>
-              ➤ Disfruta de nuestra variedad de disciplinas: Fuerza, HIIT,
-              Cardio, Yoga, Meditación y Más.
-            </p>
-            <p>➤ Cancela cuando quieras sin costo.</p>
-          </div>
-        </div>
-        <div class="OPCIONES">
-          <div class="card">
-            <h4 class="title-4 text-center">ANUAL</h4>
-            <h6>*CARGO ANUAL*</h6>
-            <h5>$88.99</h5>
-            <br />
-            <p>
-              ➤ Todo lo que incluye gratis y mensual más acceso ilimitado a
-              estrenos y contenido premium para darte aún más variedad.
-            </p>
-            <p>➤ ¡Ahorra más de 50 dólares al pagar la anualidad!</p>
-            <p>➤ Cancela cuando quieras sin costo.</p>
-          </div>
-        </div>
-      </div>
-      <br />
-    </section>
+  </section>
 
-    <br />
-    <h3 class="title-3 text-center">CATEGORÍAS</h3>
-    <p style="color: white; text-align: center">
-      ¡Ponte fit con el catálogo más grande de rutinas en español! <br />
-      Elige entre más de 1,000 clases sin demandas para ponerte en forma
-      mientras te diviertes.
-    </p>
-    <br />
+  <br />
+  <h3 class="title-3 text-center">CATEGORÍAS</h3>
+  <p style="color: white; text-align: center">
+    ¡Ponte fit con el catálogo más grande de rutinas en español! <br />
+    Elige entre más de 1,000 clases sin demandas para ponerte en forma
+    mientras te diviertes.
+  </p>
+  <br />
 
-    <main>
-      <div class="item-a">
-        <img src="img/CATEGORIAS/1.jpg" alt="1" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/2.jpg" alt="2" />
-      </div>
-      <div class="item-b">
-        <img src="img/CATEGORIAS/3.jpg" alt="3" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/4.jpg" alt="4" />
-      </div>
-      <div class="item-c">
-        <img src="img/CATEGORIAS/5.jpg" alt="5" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/6.jpg" alt="6" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/7.jpg" alt="7" />
-      </div>
-      <div class="item-d">
-        <img src="img/CATEGORIAS/8.jpg" alt="8" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/9.jpg" alt="9" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/10.jpg" alt="10" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/11.jpg" alt="11" />
-      </div>
-      <div>
-        <img src="img/CATEGORIAS/12.jpg" alt="12" />
-      </div>
+  <main>
+    <div class="item-a">
+      <img src="img/CATEGORIAS/1.jpg" alt="1" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/2.jpg" alt="2" />
+    </div>
+    <div class="item-b">
+      <img src="img/CATEGORIAS/3.jpg" alt="3" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/4.jpg" alt="4" />
+    </div>
+    <div class="item-c">
+      <img src="img/CATEGORIAS/5.jpg" alt="5" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/6.jpg" alt="6" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/7.jpg" alt="7" />
+    </div>
+    <div class="item-d">
+      <img src="img/CATEGORIAS/8.jpg" alt="8" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/9.jpg" alt="9" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/10.jpg" alt="10" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/11.jpg" alt="11" />
+    </div>
+    <div>
+      <img src="img/CATEGORIAS/12.jpg" alt="12" />
+    </div>
 
-      <footer class="piePagina"></footer>
-    </main>
-  </body>
+    <footer class="footer">
+      <div class="icons">
+        <a href="#"><img src="img/LOGOS-REDES/facebook.png" alt="facebook"></a>
+        <a href="#"><img src="img/LOGOS-REDES/linkedin.png" alt="linkedin"></a>
+        <a href="#"><img src="img/LOGOS-REDES/instagram.png" alt="instagram"></a>
+        <a href="#"><img src="img/LOGOS-REDES/whatsapp.png" alt="whatsapp"></i></a>
+        <br>
+      </div>
+      <br>
+      <p class="company-name">
+        UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
+      </p>
+      <br>
+    </footer>
+  </main>
+</body>
+
 </html>
