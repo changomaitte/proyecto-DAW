@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 body {
@@ -46,7 +48,6 @@ header {
   color: #353535;
   font-size: large;
   font-weight: bold;
-  font-family: "Open sans" sans-serif;
   text-decoration: none;
   margin: 10px;
 }
