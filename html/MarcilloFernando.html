@@ -5,11 +5,10 @@
   <meta charset="utf-8" />
   <meta name="description" content="ejemplo de HTML5" />
   <meta name="keywords" content="HTML5, CSS3, JavaScript" />
-  <title>Productos</title>
+  <title>Articulos</title>
   <link rel="stylesheet" href="../css/general.css" />
 
   <style>
-    /* SELECTOR DE CLASE */
     .seccionCentral {
       display: flex;
       flex-basis: 100%;
@@ -20,7 +19,6 @@
       flex-basis: 100%;
     }
 
-    /*SELECT POR ELEMENTO*/
     .seccionCentral_uno {
       display: flex;
       flex-wrap: wrap;
@@ -28,32 +26,28 @@
       justify-content: space-around;
     }
 
-    /*SELECTOR POR HIJOS*/
     .seccionCentral_uno>article {
       flex-basis: auto;
       width: 30%;
     }
 
-    /* SELECTOR DE CLASE CON DECENCIENTE*/
     .seccionCentral_uno_articulo img {
-      width: 50%;
-      margin-top: 20px;
-      margin-left: 95px;
+      width: 60%;
+      margin-top: 30px;
+      margin-left: 70px;
     }
 
-    /* SELECTOR DE CLASE CON DECENCIENTE MÁS SELECTOR PSEUDOCLASES*/
     .seccionCentral_uno img:hover {
-      filter: drop-shadow(0 2px 5px rgba(238, 233, 233, 0.7));
+      filter: drop-shadow(0 2px 7px rgba(255, 0, 0, 0.7));
     }
 
     span[data-descr] {
       position: relative;
       text-decoration: underline;
-      color: white;
+      color: chartreuse;
       cursor: cell;
     }
 
-    /* ? LO QUE SE ESTÁ HACIENDO ES QUE POR CADA CLASE que tenga la propiedad data-descr SE LE APLICA UN HOVER Y UN AFTER PARA QUE AGREGUÉ EL CONTENIDO DEL SPAN */
     span[data-descr]:hover::after {
       content: attr(data-descr);
       position: absolute;
@@ -62,9 +56,10 @@
       min-width: 200px;
       border: 1px #aaaaaa solid;
       border-radius: 10px;
-      background-color: #ffffcc;
+      background-color: aquamarine;
       padding: 12px;
       color: #000000;
+      font-weight: bold;
       font-size: 14px;
       z-index: 1;
     }
@@ -74,12 +69,31 @@
       letter-spacing: 5px;
       text-align: center
     }
+
+    .contenedor {
+      display: flex;
+      margin-top: 100px;
+      background-color: rgb(0, 0, 0);
+      padding: 25px;
+      color: #fff;
+    }
+
+    .text {
+      padding-left: 25px;
+      text-align: center;
+      justify-content: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    p.frase {
+      font-size: 18pt;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
-  <!-- * Contenedor Inicial -->
-  <!-- ! No mover la cabecera -->
   <div id="app">
     <header class="MENU_PRINCIPAL">
       <img src="../img/LOGO.png" alt="Logo UG-GYM" id="LOGO" />
@@ -99,12 +113,26 @@
       </nav>
     </header>
 
-    <!-- * Contenedor central -->
+
+    <div class="contenedor">
+
+      <div class="text">
+        <strong style="color:chartreuse; font-size: 24pt; text-transform: uppercase;">nunca dejes que tu mente te diga
+          que no puedes!</strong>
+        <p class="frase">Artículos de la más alta calidad a precios de tu
+          bolsillo sin intereses, no te quedes sin tus articulos. <em>“Solo para ti”</em>
+        </p>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
     <main class="seccionCentral">
       <section class="seccionCentral_uno">
         <div class="seccionCentral_uno_encabezado">
-          <h1 class="productos" style="color: white; letter-spacing: 5px; text-align: center">
-            PRODUCTOS
+          <h1 class="articulos" style="color: red; letter-spacing: 5px; text-align: center;">
+            ARTICULOS EN VENTA
             </p>
           </h1>
         </div>
@@ -112,26 +140,32 @@
         <br>
         <br>
         <article class="seccionCentral_uno_articulo">
-          <H2><span tabindex="0" data-descr="VALOR: $50">Nitro</span></H2>
-          <img src="../img/Productos/MC_CFM_nitro_1000g-600x600.png" alt="wheyProtein" />
-
+          <H2><span tabindex="0" data-descr="VALOR: $60.50">Mancuernas</span></H2>
+          <img src="../img/Productos/1.png" alt="Mancuernas" />
         </article>
         <article class="seccionCentral_uno_articulo">
-          <H2><span tabindex="0" data-descr="VALOR: $100">Whey Platinum</span></H2>
-          <img src="../img/Productos/platinumWhey.png" alt="platinum" />
+          <H2><span tabindex="0" data-descr="VALOR: $6.50">Cuerda</span></H2>
+          <img src="../img/Productos/2.png" alt="Cuerda" />
         </article>
         <article class="seccionCentral_uno_articulo">
-          <H2><span tabindex="0" data-descr="VALOR: $100">Whey</span></H2>
-          <img src="../img/Productos/whey.png" alt="whey" />
+          <H2><span tabindex="0" data-descr="VALOR: $35">Pesa Rusa</span></H2>
+          <img src="../img/Productos/3.png" alt="Pesa Rusa" />
         </article>
         <article class="seccionCentral_uno_articulo">
-          <H2><span tabindex="0" data-descr="VALOR: $150">Whey Premium</span></H2>
-          <img src="../img/Productos/premiunWhey.jpg" alt="Premiun" />
+          <H2><span tabindex="0" data-descr="VALOR: $450">Caminadora</span></H2>
+          <img src="../img/Productos/4.png" alt="Caminadora" />
+        </article>
+        <article class="seccionCentral_uno_articulo">
+          <H2><span tabindex="0" data-descr="VALOR: $650">Prensa Pierna</span></H2>
+          <img src="../img/Productos/5.png" alt="Prensa Pierna" />
+        </article>
+        <article class="seccionCentral_uno_articulo">
+          <H2><span tabindex="0" data-descr="VALOR: $250">Prensa PosPierna</span></H2>
+          <img src="../img/Productos/6.png" alt="PosPierna" />
         </article>
       </section>
     </main>
 
-    <!-- * Contenedor final -->
     <footer class="footer">
       <div class="icons">
         <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="../img/LOGOS-REDES/facebook.png"
