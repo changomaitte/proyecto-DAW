@@ -16,4 +16,4 @@ V1.1
 
 ## Información
 
-Deber sobre maquetación en HTML 5 y diseño con los diferentes selectores en CSS3.
+Proyecto sobre maquetación en HTML 5 y diseño con los diferentes selectores en CSS3.
