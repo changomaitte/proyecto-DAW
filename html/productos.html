@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="ejemplo de HTML5" />
+  <meta name="description" content="Proyecto" />
   <meta name="keywords" content="HTML5, CSS3, JavaScript" />
   <title>Productos</title>
   <link rel="stylesheet" href="../css/general.css" />
@@ -34,6 +34,7 @@
       flex-basis: auto;
       width: 30%;
     }
+
     .seccionCentral_uno_articulo {
       display: flex;
       flex-wrap: wrap;
@@ -98,7 +99,7 @@
           <li>
             <a href="#">➽ Servicios</a>
             <ul class="submenu">
-              <li><a href="./MuñozNatanael.html">➼ Producto</a></li>
+              <li><a href="./productos.html">➼ Producto</a></li>
               <li><a href="./MarcilloFernando.html">➼ Articulos</a></li>
             </ul>
           </li>
@@ -124,15 +125,15 @@
             <H2><span tabindex="0" data-descr="VALOR: $50">Nitro</span></H2>
             <img src="https://i.imgur.com/lOVYEIX.png" alt="wheyProtein" />
           </div>
-          
+
           <br>
           <div>
-            <button class="menos_wheyProtein" type="button" >-</button>
+            <button class="menos_wheyProtein" type="button">-</button>
             <input id="cantidadWheyProtein" type="text" style="text-align: center;" value="1" size="9">
-            <button class="mas_wheyProtein" type="button" >+</button>
+            <button class="mas_wheyProtein" type="button">+</button>
           </div>
           <div>
-            <button class="btn" type="button" id="carrito">Agregar a carrito</button>
+            <button class="btn" type="button" id="carritoWheyProtein">Agregar a carrito</button>
           </div>
         </article>
 
@@ -142,14 +143,14 @@
             <img src="https://i.imgur.com/OGv0rWP.png" alt="platinum" />
           </div>
           <br>
-          
+
           <div>
             <button class="menos_platinum" type="button">-</button>
             <input id="cantidadPlatinum" type="text" style="text-align: center;" value="1" size="9">
-            <button class="mas_platinum" type="button" >+</button>
+            <button class="mas_platinum" type="button">+</button>
           </div>
           <div>
-            <button class="btn" type="button" id="carrito">Agregar a carrito</button>
+            <button class="btn" type="button" id="carritoPlatinum">Agregar a carrito</button>
           </div>
         </article>
 
@@ -159,14 +160,14 @@
             <img src="https://i.imgur.com/JAj8Hlu.png" alt="whey" />
           </div>
           <br>
-          
+
           <div>
-            <button class="menos_whey" type="button" >-</button>
+            <button class="menos_whey" type="button">-</button>
             <input id="cantidadWhey" type="text" style="text-align: center;" value="1" size="9">
-            <button class="mas_whey" type="button" >+</button>
+            <button class="mas_whey" type="button">+</button>
           </div>
           <div>
-            <button class="btn" type="button" id="carrito">Agregar a carrito</button>
+            <button class="btn" type="button" id="carritoWhey">Agregar a carrito</button>
           </div>
         </article>
 
@@ -177,80 +178,102 @@
           </div>
           <br>
           <div>
-            <button class="menos_premium" type="button" >-</button>
+            <button class="menos_premium" type="button">-</button>
             <input id="cantidadPremium" type="text" style="text-align: center;" value="1" size="9">
-            <button class="mas_premium" type="button" >+</button>
+            <button class="mas_premium" type="button">+</button>
           </div>
           <div>
-            <button class="btn" type="button" id="carrito">Agregar a carrito</button>
+            <button class="btn" type="button" id="carritoPremium">Agregar a carrito</button>
           </div>
         </article>
       </section>
-    </main>
 
-    <!-- * Contenedor final -->
-    <footer class="footer">
-      <div class="icons">
-        <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="https://i.imgur.com/1D7E4XS.png"
-            alt="facebook" /></a>
-        <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img src="https://i.imgur.com/OOKo2eY.png"
-            alt="linkedin" /></a>
-        <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img src="https://i.imgur.com/Lvgb2b7.png"
-            alt="instagram" /></a>
-        <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
-            src="https://i.imgur.com/dm1ety7.png" alt="whatsapp" /></a>
-        <br />
-      </div>
-      <p class="Copyright-UG">
-        UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
-      </p>
+      <!-- * PARTE DEL CARRITO -->
+      <aside class="seccionLateral">
+        <table class="seccionLateral_productos">
+          <tr>
+            <th>Carrito</th>
+          </tr>
+          <tr>
+            <td>Nombre</td>
+            <td>Cantidad</td>
+          </tr>
+        </table>
+  </div>
+  </aside>
+  </main>
+
+  <!-- * Contenedor final -->
+  <footer class="footer">
+    <div class="icons">
+      <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="https://i.imgur.com/1D7E4XS.png"
+          alt="facebook" /></a>
+      <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img src="https://i.imgur.com/OOKo2eY.png"
+          alt="linkedin" /></a>
+      <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img src="https://i.imgur.com/Lvgb2b7.png"
+          alt="instagram" /></a>
+      <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
+          src="https://i.imgur.com/dm1ety7.png" alt="whatsapp" /></a>
       <br />
-    </footer>
+    </div>
+    <p class="Copyright-UG">
+      UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
+    </p>
+    <br />
+  </footer>
   </div>
   <script>
     // INICIALIZO UN CONTADOR
     let wheyProtein = 1;
-    let platinum = 1; 
+    let platinum = 1;
     let whey = 1;
     let premium = 1;
 
     // WHEY PROTEIN
-    document.querySelector(".mas_wheyProtein").addEventListener("click", () => {wheyProtein = sumar(wheyProtein, "cantidadWheyProtein");});
-    document.querySelector(".menos_wheyProtein").addEventListener("click", () => {wheyProtein = restar(wheyProtein, "cantidadWheyProtein");})
+    document.querySelector(".mas_wheyProtein").addEventListener("click", () => { wheyProtein = sumar(wheyProtein, "cantidadWheyProtein"); });
+    document.querySelector(".menos_wheyProtein").addEventListener("click", () => { wheyProtein = restar(wheyProtein, "cantidadWheyProtein"); })
+    document.querySelector("#carritoWheyProtein").addEventListener("click", () => { agregarProducto("Whey Protein", wheyProtein); })
 
     // PLATINUM
-    document.querySelector(".mas_platinum").addEventListener("click", () => {platinum = sumar(platinum,"cantidadPlatinum");});
-    document.querySelector(".menos_platinum").addEventListener("click", () => {platinum = restar(platinum,"cantidadPlatinum");})
+    document.querySelector(".mas_platinum").addEventListener("click", () => { platinum = sumar(platinum, "cantidadPlatinum"); });
+    document.querySelector(".menos_platinum").addEventListener("click", () => { platinum = restar(platinum, "cantidadPlatinum"); })
+    document.querySelector("#carritoPlatinum").addEventListener("click", () => { agregarProducto("Platinum ", platinum); })
 
     // WHEY
-    document.querySelector(".mas_whey").addEventListener("click", () => {whey = sumar(whey,"cantidadWhey");});
-    document.querySelector(".menos_whey").addEventListener("click", () => {whey = restar(whey,"cantidadWhey");})
+    document.querySelector(".mas_whey").addEventListener("click", () => { whey = sumar(whey, "cantidadWhey"); });
+    document.querySelector(".menos_whey").addEventListener("click", () => { whey = restar(whey, "cantidadWhey"); })
+    document.querySelector("#carritoWhey").addEventListener("click", () => { agregarProducto("Whey", whey); })
 
     // PREMINUM
-    document.querySelector(".mas_premium").addEventListener("click", () => {premium = sumar(premium,"cantidadPremium");});
-    document.querySelector(".menos_premium").addEventListener("click", () => {premium = restar(premium,"cantidadPremium");})
+    document.querySelector(".mas_premium").addEventListener("click", () => { premium = sumar(premium, "cantidadPremium"); });
+    document.querySelector(".menos_premium").addEventListener("click", () => { premium = restar(premium, "cantidadPremium"); })
+    document.querySelector("#carritoPremium").addEventListener("click", () => { agregarProducto("Premium", premium); })
 
-    function sumar(objeto, campoId){
-      objeto = objeto + 1; 
-      var cant = document.getElementById(campoId); 
+    function sumar(objeto, campoId) {
+      objeto = objeto + 1;
+      var cant = document.getElementById(campoId);
       cant.value = objeto;
       return objeto;
     }
 
-    function restar(objeto, campoId){
-      if(objeto>=1){
-        objeto = objeto - 1; 
-        var cant = document.getElementById(campoId); 
+    function restar(objeto, campoId) {
+      if (objeto >= 1) {
+        objeto = objeto - 1;
+        var cant = document.getElementById(campoId);
         cant.value = objeto;
         return objeto;
-      }else if(objeto <= 0){
-        objeto=0;
+      } else if (objeto <= 0) {
+        objeto = 0;
         return objeto;
       }
     }
 
-    function agregarProducto(evento){
-
+    function agregarProducto(producto, cantidadProducto, evento) {
+      console.log(producto);
+      console.log(cantidadProducto);
+      const fila = document.createElement("tr");
+      const columnaNombre = document.createElement("td");
+      const columnaCantidad = document.createElement("td");
     }
   </script>
 </body>
