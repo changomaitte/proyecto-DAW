@@ -15,6 +15,7 @@
       display: flex;
       flex-basis: 100%;
       flex-direction: row;
+      flex-wrap: wrap;
     }
 
     .seccionCentral_uno_encabezado {
@@ -27,12 +28,14 @@
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-around;
+      flex-basis: 80%;
     }
 
     /*SELECTOR POR HIJOS*/
     .seccionCentral_uno>article {
       flex-basis: auto;
       width: 30%;
+      padding: 10px;
     }
 
     .seccionCentral_uno_articulo {
@@ -82,6 +85,32 @@
       color: white;
       letter-spacing: 5px;
       text-align: center
+    }
+
+    .seccionLateral{
+      flex-basis: 20%;
+      display: flex;
+      flex-direction: column;
+      background-color: #aaaaaa;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .seccionLateral_dos{
+      width: 100%;
+    }
+
+    .generarOrden{
+      width: 100%;
+      padding: 10px;
+    }
+
+    .generarOrden:hover{
+      background-color: greenyellow;
+    }
+
+    table{
+      width: 100%;
     }
   </style>
 </head>
@@ -190,17 +219,21 @@
 
       <!-- * PARTE DEL CARRITO -->
       <aside class="seccionLateral">
-        <table class="seccionLateral_productos">
-          <tr>
-            <th>Carrito</th>
-          </tr>
-          <tr>
-            <td>Nombre</td>
-            <td>Cantidad</td>
-          </tr>
+        <table>
+          <caption>Carrito</caption>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody class="cuerpoTabla">
+          </tbody>
         </table>
-  </div>
-  </aside>
+        <div class="seccionLateral_dos">
+          <button class="generarOrden" type="button">Generar orden</button>
+        </div>
+      </aside>
   </main>
 
   <!-- * Contenedor final -->
@@ -229,25 +262,24 @@
     let whey = 1;
     let premium = 1;
 
+    // LOS BOTONES
+    document.querySelectorAll(".btn").forEach(btn => btn.addEventListener("click", agregar));
+
     // WHEY PROTEIN
     document.querySelector(".mas_wheyProtein").addEventListener("click", () => { wheyProtein = sumar(wheyProtein, "cantidadWheyProtein"); });
     document.querySelector(".menos_wheyProtein").addEventListener("click", () => { wheyProtein = restar(wheyProtein, "cantidadWheyProtein"); })
-    document.querySelector("#carritoWheyProtein").addEventListener("click", () => { agregarProducto("Whey Protein", wheyProtein); })
 
     // PLATINUM
     document.querySelector(".mas_platinum").addEventListener("click", () => { platinum = sumar(platinum, "cantidadPlatinum"); });
     document.querySelector(".menos_platinum").addEventListener("click", () => { platinum = restar(platinum, "cantidadPlatinum"); })
-    document.querySelector("#carritoPlatinum").addEventListener("click", () => { agregarProducto("Platinum ", platinum); })
 
     // WHEY
     document.querySelector(".mas_whey").addEventListener("click", () => { whey = sumar(whey, "cantidadWhey"); });
     document.querySelector(".menos_whey").addEventListener("click", () => { whey = restar(whey, "cantidadWhey"); })
-    document.querySelector("#carritoWhey").addEventListener("click", () => { agregarProducto("Whey", whey); })
 
     // PREMINUM
     document.querySelector(".mas_premium").addEventListener("click", () => { premium = sumar(premium, "cantidadPremium"); });
     document.querySelector(".menos_premium").addEventListener("click", () => { premium = restar(premium, "cantidadPremium"); })
-    document.querySelector("#carritoPremium").addEventListener("click", () => { agregarProducto("Premium", premium); })
 
     function sumar(objeto, campoId) {
       objeto = objeto + 1;
@@ -268,14 +300,33 @@
       }
     }
 
-    function agregarProducto(producto, cantidadProducto, evento) {
-      console.log(producto);
-      console.log(cantidadProducto);
+    function agregarFila(producto, cantidadProducto) {
+      // AQUI SE TRAE EL BODY DE LA TABLA
+      const tabla = document.querySelector(".cuerpoTabla");
+
+      // CREACION DE ELEMENTOS
       const fila = document.createElement("tr");
-      const columnaNombre = document.createElement("td");
-      const columnaCantidad = document.createElement("td");
+
+      const columnaNombre = document.createElement("td"); // NOMBRE
+      columnaNombre.innerText = producto;
+
+      const columnaCantidad = document.createElement("td"); // CANTIDAD
+      columnaCantidad.innerText = cantidadProducto;
+
+      // SE AGREGAN LOS PRODUCTOS 
+      fila.appendChild(columnaNombre);
+      fila.appendChild(columnaCantidad);
+      tabla.appendChild(fila);
+    }
+
+    function agregar(e){
+      // SE CONSIGUE EL NOMBRE DEL ID
+      const nombreProducto = e.target.id.replace("carrito","");
+      const nombreIdImput = "cantidad" + nombreProducto;
+      // SE CONSIGUE EL VALOR DEL CAMPO DE TEXTO
+      const cantidad = document.querySelector(`#${nombreIdImput}`).value;
+      agregarFila(nombreProducto, cantidad);
     }
   </script>
 </body>
-
 </html>
