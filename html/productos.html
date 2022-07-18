@@ -10,6 +10,9 @@
   <link rel="icon" href="../img/DAW PROYECYO - UG GYMNASIO.ico" type="imagen/x-icon">
 
   <style>
+    *{
+      text-align: center
+    }
     /* SELECTOR DE CLASE */
     .seccionCentral {
       display: flex;
@@ -84,7 +87,6 @@
     H2 {
       color: white;
       letter-spacing: 5px;
-      text-align: center
     }
 
     .seccionLateral{
@@ -100,13 +102,18 @@
       width: 100%;
     }
 
-    .generarOrden{
+    .generarOrden, .eliminarOrden{
       width: 100%;
       padding: 10px;
     }
 
     .generarOrden:hover{
       background-color: greenyellow;
+    }
+
+    .eliminarOrden:hover{
+      background-color: red
+
     }
 
     table{
@@ -231,6 +238,7 @@
           </tbody>
         </table>
         <div class="seccionLateral_dos">
+          <button class="eliminarOrden" type="button">Eliminar una orden</button>
           <button class="generarOrden" type="button">Generar orden</button>
         </div>
       </aside>
@@ -250,7 +258,7 @@
       <br />
     </div>
     <p class="Copyright-UG">
-      UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
+      UG-GYM &copy; 2022, Universidad De Guayaquil - Carrera Software
     </p>
     <br />
   </footer>
@@ -281,6 +289,19 @@
     document.querySelector(".mas_premium").addEventListener("click", () => { premium = sumar(premium, "cantidadPremium"); });
     document.querySelector(".menos_premium").addEventListener("click", () => { premium = restar(premium, "cantidadPremium"); })
 
+    // CARRITO
+    document.querySelector(".generarOrden").addEventListener("click", () => {
+      const numeroDeOrdenes = document.querySelector(".cuerpoTabla").children.length
+      if(numeroDeOrdenes <= 0){
+        alert(`Hay ${numeroDeOrdenes} elementos. No se puede procesar la orden.`)
+      }else{
+        alert(`La orden con los ${numeroDeOrdenes} elementos ha sido procesada, por favor retirar en tienda.`)}
+      }
+    )
+
+    document.querySelector(".eliminarOrden").addEventListener("click", () => {alert(`Función a futuro de implementar`)})
+
+    // FUNCIONES
     function sumar(objeto, campoId) {
       objeto = objeto + 1;
       var cant = document.getElementById(campoId);
