@@ -315,38 +315,32 @@
                 !inputEmail.value ||
                 !inputAsunto.value ||
                 !inputMensaje.value) {
-                // alert('Por favor llenar todos los campos');
                 sendMessage(inputCheck,'Por favor llenar todos los campos');
                 return false;
             }
 
             if(!expresiones.nombre.test(inputNombre.value)){
-                // alert('Los nombre solo pueden tener letras y espacios');
                 sendMessage(inputNombre,'Los nombre solo pueden tener letras y espacios');
                 return false;
             }
 
             if(!expresiones.soloNumero.test(inputTele.value)){
-                // alert('El telefeno solo debe contener numeros');
-                sendMessage(inputTele,'El telefeno solo debe contener numeros');
+                sendMessage(inputTele,'El teléfono solo debe contener números');
                 return false;
             }
 
             if(!expresiones.telefono.test(inputTele.value)){
-                // alert('El telefeno debe contener de 7 a 14 numeros');
-                sendMessage(inputTele,'El telefeno debe contener de 7 a 14 numeros');
+                sendMessage(inputTele,'El teléfono debe contener de 7 a 14 números');
                 return false;
             }
 
             if(!expresiones.correo.test(inputEmail.value)){
-                // alert('El email debe conetener un @ y .');
-                sendMessage(inputEmail,'El email debe conetener un @ y .');
+                sendMessage(inputEmail,'El email debe contener un @ y .');
                 return false;
             }
 
             if(!inputCheck.checked){
-                // alert('Por favor aceptar los terminos y condiciones');
-                sendMessage(inputCheck,'Por favor aceptar los terminos y condiciones');
+                sendMessage(inputCheck,'Por favor aceptar los términos y condiciones');
                 return false;
             }
 
