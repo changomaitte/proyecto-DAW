@@ -11,7 +11,7 @@
             width: 100%;
             text-align: center;
         }
-        
+
         th {
             padding: 20px 0;
         }
@@ -123,7 +123,37 @@
             color: white;
             margin: 10px 10px;
         }
+
+        #textBoton{
+            margin-top: 10px;
+            margin-left: 45%;
+        }
     </style>
+
+    <script>
+        function toggleText() {
+
+
+            var inicio = document.getElementById("inicio");
+
+            var masTexto = document.getElementById("masTexto");
+
+            var botonTexto = document.getElementById("textBoton");
+
+            if (inicio.style.display === "none") {
+                masTexto.style.display = "none";
+                inicio.style.display = "inline";
+                botonTexto.innerHTML = "Mostrar mas";
+            }
+
+
+            else {
+                masTexto.style.display = "inline";
+                inicio.style.display = "none";
+                botonTexto.innerHTML = "Mostrar menos";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -172,27 +202,33 @@
                 mentalidad,
                 de
                 estilo de vida. <br><br>
+                <span id="inicio"></span>
 
-                Son precisamente este tipo de mensajes los que nos alientan a seguir dándolo todo. A creer en la
-                comunidad
-                que
-                hemos formado y en seguir, por muchos años más, poniendo nuestro conocimiento al servicio de todos
-                los
-                usuarios
-                que ya han confiado y confían en nosotros. <br><br>
+                <span id="masTexto">Son precisamente este tipo de mensajes los que nos alientan a seguir dándolo todo. A
+                    creer en la
+                    comunidad
+                    que
+                    hemos formado y en seguir, por muchos años más, poniendo nuestro conocimiento al servicio de todos
+                    los
+                    usuarios
+                    que ya han confiado y confían en nosotros. <br><br>
 
-                Nuestro lema de vida es <strong> Yo puedo con todo.</strong> No son palabras vacías ni mágicas. Son
-                palabras que te
-                incitan a
-                dejar atrás las creencias que te limitan, los fallos que has cometido y que te hacen pensar que no
-                eres
-                capaz.<br><br>
-                Si pensamos que vamos a poder, si ponemos todo el empeño, dedicación y compromiso, <strong> lo vamos a
-                    lograr</strong> . Solo hay que cambiar la manera de ver las cosas, y sobre todo pensar que estas
-                palabras tienen que ir acompañadas de algo más: “yo puedo con todo” pero con esfuerzo, <strong> “yo
-                    puedo con todo”</strong> si quiero y si realmente estoy dispuesto a sacrificar todo lo que esté en
-                mi mano. Utiliza el <strong> “Yo puedo con todo”</strong> siempre que lo necesites!
+                    Nuestro lema de vida es <strong> Yo puedo con todo.</strong> No son palabras vacías ni mágicas. Son
+                    palabras que te
+                    incitan a
+                    dejar atrás las creencias que te limitan, los fallos que has cometido y que te hacen pensar que no
+                    eres
+                    capaz.<br><br>
+                    Si pensamos que vamos a poder, si ponemos todo el empeño, dedicación y compromiso, <strong> lo vamos
+                        a
+                        lograr</strong> . Solo hay que cambiar la manera de ver las cosas, y sobre todo pensar que estas
+                    palabras tienen que ir acompañadas de algo más: “yo puedo con todo” pero con esfuerzo, <strong> “yo
+                        puedo con todo”</strong> si quiero y si realmente estoy dispuesto a sacrificar todo lo que esté
+                    en
+                    mi mano. Utiliza el <strong> “Yo puedo con todo”</strong> siempre que lo necesites!
+                </span>
             </p>
+            <button onclick="toggleText()" id="textBoton"> Mostrar menos</button>
         </div>
 
         <br>
