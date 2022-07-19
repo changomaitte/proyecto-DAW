@@ -8,7 +8,7 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="../css/general.css" />
     <link rel="icon" href="../img/DAW PROYECYO - UG GYMNASIO.ico" type="imagen/x-icon">
-    
+
     <style>
         * {
             margin: 0;
@@ -54,7 +54,7 @@
             gap: 1rem;
         }
 
-        button[type=button] {
+        button[type=submit] {
             align-self: center;
             width: 30%;
             padding: 1rem;
@@ -66,7 +66,7 @@
             transition: .2s all ease-in;
         }
 
-        button[type=button]:hover {
+        button[type=submit]:hover {
             background-color: rgb(221, 45, 80);
         }
 
@@ -89,6 +89,7 @@
         }
 
         form {
+            position: relative;
             max-width: 40rem;
             background-color: #201c1c;
             padding: 1rem;
@@ -124,7 +125,7 @@
 
         input:focus,
         textarea:active {
-            border: 3px solid crimson;
+            border: 3px solid rgb(20, 100, 220);
             outline: none;
         }
 
@@ -141,6 +142,30 @@
             height: 7rem;
             resize: none;
         }
+
+
+        .alert{
+            padding: 1rem;
+            background-color: crimson;
+            border-radius: 10px;
+        }
+
+        .submit::before{
+            position: absolute;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 147, 220, 0.5);
+            content: 'Formulario enviado';
+            color: #201c1c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
     </style>
 </head>
 
@@ -150,7 +175,7 @@
             <img src="https://i.imgur.com/BVmYOzTb.png" alt="Logo UG-GYM" id="LOGO" />
             <nav class="navegacion">
                 <ul class="menu">
-                    <li><a href="../VelezJoe.html">➽ Inicio</a></li>
+                    <li><a href="../index.html">➽ Inicio</a></li>
                     <li><a href="./ChangoMaitte.html">➽ Nosotros</a></li>
                     <li>
                         <a href="#">➽ Servicios</a>
@@ -206,7 +231,7 @@
                     </div>
                 </div>
                 <div class="escribanos">
-                    <form>
+                    <form id="formulario">
                         <label for="inputNombre">Nombre</label>
                         <input type="text" id="inputNombre">
                         <label for="inputTele">Tel&eacute;fono</label>
@@ -218,15 +243,14 @@
                         <label for="inputMensaje">Mensaje</label>
                         <textarea name="mensaje" id="inputMensaje" cols="30" rows="10"></textarea>
                         <label class="check">
-                            <input type="checkbox">
+                            <input type="checkbox" id="inputCheck">
                             Al enviar este formulario estoy de acuerdo con que los datos aquí expuestos serán
                             recolectados y almacenados.
                         </label>
-                        <button type="button">Enviar Mensaje</button>
+                        <button type="submit">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
-
         </main>
         <!-- * Contenedor final -->
         <footer class="footer">
@@ -247,6 +271,106 @@
             <br />
         </footer>
     </div>
+    <script>
+        const inputNombre = document.getElementById('inputNombre');
+        const inputTele = document.getElementById('inputTele');
+        const inputEmail = document.getElementById('inputEmail');
+        const inputAsunto = document.getElementById('inputAsunto');
+        const inputMensaje = document.getElementById('inputMensaje');
+        const inputCheck = document.getElementById('inputCheck');
+        const formulario = document.getElementById('formulario');
+        let alertElement = document.createElement('div');;
+
+        const expresiones = {
+            nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+            correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+            soloNumero: /^[0-9]*$/,
+            telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+        }
+
+        formulario.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if(submit()){
+                alertElement.remove();
+                formulario.classList.add('submit');
+                setTimeout(()=>{
+                    formulario.classList.remove('submit');
+                    cleanInputs();
+                },2000)
+            }
+        })
+
+        function cleanInputs(){
+            inputNombre.value = '';
+            inputTele.value = '';
+            inputEmail.value = '';
+            inputAsunto.value = '';
+            inputMensaje.value = '';
+            inputCheck.checked = false;
+        }
+
+        function submit() {
+            if (!inputNombre.value ||
+                !inputTele.value ||
+                !inputEmail.value ||
+                !inputAsunto.value ||
+                !inputMensaje.value) {
+                // alert('Por favor llenar todos los campos');
+                sendMessage(inputCheck,'Por favor llenar todos los campos');
+                return false;
+            }
+
+            if(!expresiones.nombre.test(inputNombre.value)){
+                // alert('Los nombre solo pueden tener letras y espacios');
+                sendMessage(inputNombre,'Los nombre solo pueden tener letras y espacios');
+                return false;
+            }
+
+            if(!expresiones.soloNumero.test(inputTele.value)){
+                // alert('El telefeno solo debe contener numeros');
+                sendMessage(inputTele,'El telefeno solo debe contener numeros');
+                return false;
+            }
+
+            if(!expresiones.telefono.test(inputTele.value)){
+                // alert('El telefeno debe contener de 7 a 14 numeros');
+                sendMessage(inputTele,'El telefeno debe contener de 7 a 14 numeros');
+                return false;
+            }
+
+            if(!expresiones.correo.test(inputEmail.value)){
+                // alert('El email debe conetener un @ y .');
+                sendMessage(inputEmail,'El email debe conetener un @ y .');
+                return false;
+            }
+
+            if(!inputCheck.checked){
+                // alert('Por favor aceptar los terminos y condiciones');
+                sendMessage(inputCheck,'Por favor aceptar los terminos y condiciones');
+                return false;
+            }
+
+            return true
+        }
+
+        function sendMessage(element, message){
+            alertElement.remove()
+            createAlert(element, message);
+            element.focus();
+        }
+
+        function createAlert(element, message){
+            alertElement = document.createElement('div');
+            alertElement.classList.add('alert');
+            alertElement.textContent = message;
+            if(element === inputCheck){
+                formulario.insertBefore(alertElement,element.parentElement.nextSibling);
+                return
+            }
+            formulario.insertBefore(alertElement,element.nextSibling);
+        }
+
+    </script>
 </body>
 
 </html>
