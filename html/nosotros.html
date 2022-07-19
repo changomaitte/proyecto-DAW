@@ -11,11 +11,12 @@
             width: 100%;
             text-align: center;
         }
-       
+
 
         th {
             padding: 20px 0;
         }
+
         td {
             color: #000000;
             font-weight: bold;
@@ -32,7 +33,7 @@
         }
 
 
-       
+
 
         .Blanco-tabla,
         th {
@@ -41,7 +42,7 @@
             font-weight: bold;
         }
 
-        
+
         .tabla-verde1,
         .tabla-verde2 {
             background-color: rgb(33, 141, 39);
@@ -93,25 +94,25 @@
 
         }
 
-        
+
         p.frase {
             font-size: 18pt;
             color: white;
         }
 
-        
+
         .tarjeta:hover {
             background-color: darkolivegreen;
             transition: all 0.5s;
 
         }
 
-        
+
         p::selection {
             background-color: rgb(72, 94, 54);
         }
 
-        
+
 
         .contenedor strong {
             color: green;
@@ -123,21 +124,66 @@
             color: #fff;
         }
 
-        
+
         a[href=""] {
             color: rgb(155, 180, 129);
         }
 
-        #tabla-horario{
+        #tabla-horario {
             background: #050404;
             padding-top: 10PX;
         }
 
-        #entrenadores1, #entrenadores2, #entrenadores3, #entrenadores4 {
+        #entrenadores1,
+        #entrenadores2,
+        #entrenadores3,
+        #entrenadores4 {
             color: white;
             margin: 10px 10px;
         }
+
+        button {
+
+            bottom: 10px;
+            left: 15%;
+            width: 25%;
+            padding: 5px;
+            text-align: center;
+            border: none;
+            color: rgb(179, 179, 179);
+            background-color: red;
+            border-radius: 30px;
+
+
+
+        }
     </style>
+
+    <script>
+        function toggleText() {
+
+
+            var inicio = document.getElementById("inicio");
+
+            var masTexto = document.getElementById("masTexto");
+
+            var botonTexto = document.getElementById("textBoton");
+
+            if (inicio.style.display === "none") {
+                masTexto.style.display = "none";
+                inicio.style.display = "inline";
+                botonTexto.innerHTML = "Mostrar mas";
+            }
+
+
+            else {
+                masTexto.style.display = "inline";
+                inicio.style.display = "none";
+                botonTexto.innerHTML = "Mostrar menos";
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -145,7 +191,7 @@
         <img src="img/LOGO.png" alt="Logo UG-GYM" id="LOGO" />
         <nav class="navegacion">
             <ul class="menu">
-                <li><a href="../index.html">➽ Inicio</a></li>
+                <li><a href="index.html">➽ Inicio</a></li>
                 <li><a href="#">➽ Nosotros</a></li>
                 <li>
                     <a href="#">➽ Servicios</a>
@@ -162,7 +208,7 @@
 
         <div class="contenedor-principal">
 
-            <img src="gym.jpeg" alt=""  height="450" width="350">
+            <img src="gym.jpeg" alt="" height="450" width="350">
 
             <div class="text">
                 <!--hoja de estilo en linea-->
@@ -186,28 +232,35 @@
                 mentalidad,
                 de
                 estilo de vida. <br><br>
+                <span id="inicio"></span>
 
-                Son precisamente este tipo de mensajes los que nos alientan a seguir dándolo todo. A creer en la
-                comunidad
-                que
-                hemos formado y en seguir, por muchos años más, poniendo nuestro conocimiento al servicio de todos
-                los
-                usuarios
-                que ya han confiado y confían en nosotros. <br><br>
+                <span id="masTexto">Son precisamente este tipo de mensajes los que nos alientan a seguir dándolo todo. A
+                    creer en la
+                    comunidad
+                    que
+                    hemos formado y en seguir, por muchos años más, poniendo nuestro conocimiento al servicio de todos
+                    los
+                    usuarios
+                    que ya han confiado y confían en nosotros. <br><br>
 
-                Nuestro lema de vida es <strong> Yo puedo con todo.</strong> No son palabras vacías ni mágicas. Son
-                palabras que te
-                incitan a
-                dejar atrás las creencias que te limitan, los fallos que has cometido y que te hacen pensar que no
-                eres
-                capaz.<br><br>
-                Si pensamos que vamos a poder, si ponemos todo el empeño, dedicación y compromiso, <strong> lo vamos a
-                    lograr</strong> . Solo hay que cambiar la manera de ver las cosas, y sobre todo pensar que estas
-                palabras tienen que ir acompañadas de algo más: “yo puedo con todo” pero con esfuerzo, <strong> “yo
-                    puedo con todo”</strong> si quiero y si realmente estoy dispuesto a sacrificar todo lo que esté en
-                mi mano. Utiliza el <strong> “Yo puedo con todo”</strong> siempre que lo necesites!
+                    Nuestro lema de vida es <strong> Yo puedo con todo.</strong> No son palabras vacías ni mágicas. Son
+                    palabras que te
+                    incitan a
+                    dejar atrás las creencias que te limitan, los fallos que has cometido y que te hacen pensar que no
+                    eres
+                    capaz.<br><br>
+                    Si pensamos que vamos a poder, si ponemos todo el empeño, dedicación y compromiso, <strong> lo vamos
+                        a
+                        lograr</strong> . Solo hay que cambiar la manera de ver las cosas, y sobre todo pensar que estas
+                    palabras tienen que ir acompañadas de algo más: “yo puedo con todo” pero con esfuerzo, <strong> “yo
+                        puedo con todo”</strong> si quiero y si realmente estoy dispuesto a sacrificar todo lo que esté
+                    en
+                    mi mano. Utiliza el <strong> “Yo puedo con todo”</strong> siempre que lo necesites!
+                </span>
             </p>
+            <button onclick="toggleText()" id="textBoton"> Mostrar menos</button>
         </div>
+
 
         <br>
         <br>
@@ -217,28 +270,28 @@
 
             <div class="contenedor-tarjetas">
                 <div class="tarjeta">
-                    <div id="entrenadores1" >
-                        <img src="entrenador1.jfif" alt=""  width="150" height="250">
+                    <div id="entrenadores1">
+                        <img src="entrenador1.jfif" alt="" width="150" height="250">
                         <h3>MICHAEL ROCA</h3>
                         <P>Yoga</P>
                         <a href="">Leer mas</a>
                     </div>
                 </div>
-             
+
 
 
                 <div class="tarjeta">
-                    <div id="entrenadores2" >
-                        <img src="entrenadora1.jpg" alt=""  width="150" height="250">
+                    <div id="entrenadores2">
+                        <img src="entrenadora1.jpg" alt="" width="150" height="250">
                         <h3>TANIA BONE</h3>
                         <P>Aerobicos</P>
                         <a href="">Leer mas</a>
                     </div>
                 </div>
-             
-    
+
+
                 <div class="tarjeta">
-                    <div id="entrenadores3" >
+                    <div id="entrenadores3">
                         <img src="entrenador2.jpg" alt="" width="150" height="250">
                         <h3>MISAEL MACIAS</h3>
                         <P>Equilibrio del cuerpo</P>
@@ -249,8 +302,8 @@
 
 
                 <div class="tarjeta">
-                    <div id="entrenadores4" >
-                        <img src="entrenadora2.jpg" alt=""  width="150" height="250">
+                    <div id="entrenadores4">
+                        <img src="entrenadora2.jpg" alt="" width="150" height="250">
                         <h3>IRIS SUAREZ</h3>
                         <P>Zumba</P>
                         <a href="">Leer mas</a>
@@ -258,17 +311,17 @@
                 </div>
             </div>
             <div>
-                
-        </div>
+
+            </div>
         </section>
 
         <br>
 
-       
-            <div class="contenedortablas">
-                <h2>Horarios</h2>
-                <table class="tabla-horario">
-                    <tr>
+
+        <div class="contenedortablas">
+            <h2>Horarios</h2>
+            <table class="tabla-horario">
+                <tr>
                     <th>Dias</th>
                     <th>Lunes</th>
                     <th>Martes</th>
@@ -276,77 +329,77 @@
                     <th>Jueves</th>
                     <th>Viernes</th>
                 </tr>
-                    <tr class="tabla-verde1">
+                <tr class="tabla-verde1">
 
-                        <td>09:00 - 10:00</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <p>Yoga <br> Michael Roca </p>
-                        </td>
-                        <td>
-                            <p>Ejercicios Aerobicos <br> Tania Bone</p>
-                        </td>
-                        <td>
-                            <p>Equilibrio del cuerpo <br> Misael Macias</p>
-                        </td>
+                    <td>09:00 - 10:00</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>Yoga <br> Michael Roca </p>
+                    </td>
+                    <td>
+                        <p>Ejercicios Aerobicos <br> Tania Bone</p>
+                    </td>
+                    <td>
+                        <p>Equilibrio del cuerpo <br> Misael Macias</p>
+                    </td>
 
-                    </tr>
-                    <tr class="Blanco-tabla">
-                        <td>10:00 - 12:00</td>
-                        <td>
-                            <p>Equilibrio del cuerpo <br> Misael Macias</p>
-                        </td>
-                        <td>
-                            <p>Zumba <br> Iris Suarez</p>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <p>Yoga <br> Michael Roca</p>
-                        </td>
-                        
-                    <tr class="tabla-verde2">
-                        <td>11:00 - 13:00</td>
+                </tr>
+                <tr class="Blanco-tabla">
+                    <td>10:00 - 12:00</td>
+                    <td>
+                        <p>Equilibrio del cuerpo <br> Misael Macias</p>
+                    </td>
+                    <td>
+                        <p>Zumba <br> Iris Suarez</p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>Yoga <br> Michael Roca</p>
+                    </td>
 
-                        <td>
-                            <p>Zumba <br> Iris Suarez</p>
-                        </td>
-                        <td>
-                            <p> Yoga <br> Michael Roca</p>
-                        </td>
-                        <td></td>
-                        <td>
-                            <p> Equilibrio del cuerpo <br> Misael Macias</p>
-                        </td>
-                        <td></td>
+                <tr class="tabla-verde2">
+                    <td>11:00 - 13:00</td>
 
-                    </tr>
-                </table><br> <br>
-            </div>
-        </section>
+                    <td>
+                        <p>Zumba <br> Iris Suarez</p>
+                    </td>
+                    <td>
+                        <p> Yoga <br> Michael Roca</p>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p> Equilibrio del cuerpo <br> Misael Macias</p>
+                    </td>
+                    <td></td>
 
-        <br>
-        
-        <footer class="footer">
-            <div class="icons">
-                <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="img/LOGOS-REDES/facebook.png"
-                        alt="facebook"></a>
-                <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img
-                        src="img/LOGOS-REDES/linkedin.png" alt="linkedin"></a>
-                <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img
-                        src="img/LOGOS-REDES/instagram.png" alt="instagram"></a>
-                <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
-                        src="img/LOGOS-REDES/whatsapp.png" alt="whatsapp"></a>
-                <br>
-            </div>
-            <p class="Copyright-UG">
-                UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
-            </p>
+                </tr>
+            </table><br> <br>
+        </div>
+    </section>
+
+    <br>
+
+    <footer class="footer">
+        <div class="icons">
+            <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="img/LOGOS-REDES/facebook.png"
+                    alt="facebook"></a>
+            <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img src="img/LOGOS-REDES/linkedin.png"
+                    alt="linkedin"></a>
+            <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img src="img/LOGOS-REDES/instagram.png"
+                    alt="instagram"></a>
+            <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
+                    src="img/LOGOS-REDES/whatsapp.png" alt="whatsapp"></a>
             <br>
-        </footer>
+        </div>
+        <p class="Copyright-UG">
+            UG-GYM &copy; 2022, Universidada De Guayaquil - Carrera Software
+        </p>
+        <br>
+    </footer>
 
-        
+
 </body>
 
 </html>
