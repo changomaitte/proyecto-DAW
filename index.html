@@ -67,6 +67,7 @@
       height: 100%;
       transform: scale(1);
       transition: all 1s;
+      position: relative;
     }
 
     .card:hover {
@@ -82,19 +83,12 @@
     }
 
     /*Titulos*/
-    .title-2 {
-      display: block;
-      margin-bottom: 15px;
-      font-size: 4rem;
-      color: white;
-    }
-
-    .title-3 {
+    .tituloSubs {
       font-size: 2rem;
       color: white;
     }
 
-    .title-4 {
+    .titulotarjetas {
       font-size: 1.3rem;
       color: white;
     }
@@ -147,6 +141,31 @@
     .item-d {
       grid-column: 3 / 5;
     }
+
+    /*CSS PARA JAVASCRIPT*/
+    .hover {
+      border: dashed red;
+      background-color: rgb(112, 155, 172);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+    }
+
+    .img2 {
+      width: 100px;
+      height: 100px;
+      margin-top: 60px;
+    }
+
+    .textojava {
+      color: black;
+      margin-left: 25px;
+      margin-top: 100px;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -179,20 +198,29 @@
   <br />
   <section class="SUSCRIPCIONES">
     <br />
-    <h3 class="title-3 text-center">SUSCRIPCIONES</h3>
+    <h3 class="tituloSubs text-center">SUSCRIPCIONES</h3>
     <div class="SUSCRIPOPCIONES">
       <div class="OPCIONES">
+
         <div class="card">
-          <h4 class="title-4 text-center">GRATIS</h4>
-          <h5>$O.OO</h5>
-          <br />
-          <p>➤ Acceso permanente a nuestros programas gratuitos.</p>
-          <p>➤ Registro sin costo y sin tarjeta.</p>
+          <div class="cardContenido">
+            <h4 class="titulotarjetas text-center">GRATIS</h4>
+            <h5>$O.OO</h5>
+            <br />
+            <p>➤ Acceso permanente a nuestros programas gratuitos.</p>
+            <p>➤ Registro sin costo y sin tarjeta.</p>
+          </div>
+          <div class='hover'>
+            <p class="textojava">SUSCRIBETE ES TOTALMENTE</p>
+            <img class='img2' src='https://i.imgur.com/JL5nC85.png' alt='Un televisor' />
+          </div>
         </div>
+
       </div>
+
       <div class="OPCIONES">
         <div class="card">
-          <h4 class="title-4 text-center">MENSUAL</h4>
+          <h4 class="titulotarjetas text-center">MENSUAL</h4>
           <h6>*CARGO MENSUAL*</h6>
           <h5>$11.99</h5>
           <br />
@@ -209,7 +237,7 @@
       </div>
       <div class="OPCIONES">
         <div class="card">
-          <h4 class="title-4 text-center">ANUAL</h4>
+          <h4 class="titulotarjetas text-center">ANUAL</h4>
           <h6>*CARGO ANUAL*</h6>
           <h5>$88.99</h5>
           <br />
@@ -226,7 +254,7 @@
   </section>
 
   <br />
-  <h3 class="title-3 text-center">CATEGORÍAS</h3>
+  <h3 class="tituloSubs text-center">CATEGORÍAS</h3>
   <p style="color: white; text-align: center">
     ¡Ponte fit con el catálogo más grande de rutinas en español! <br />
     Elige entre más de 1,000 clases sin demandas para ponerte en forma
@@ -291,6 +319,19 @@
     </p>
     <br />
   </footer>
+
+  <script>
+    const card = document.querySelector('.card')
+    const hover = document.querySelector('.hover')
+
+    card.addEventListener('mouseover', function (e) {
+      hover.style.display = 'flex';
+    })
+
+    card.addEventListener('mouseout', function (e) {
+      hover.style.display = 'none';
+    })
+  </script>
 </body>
 
 </html>
