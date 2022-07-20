@@ -78,6 +78,42 @@
       transition: all 0.7s;
     }
 
+    .card2 {
+      background: cornflowerblue;
+      color: white;
+      padding: 1rem;
+      height: 100%;
+      transform: scale(1);
+      transition: all 1s;
+      position: relative;
+    }
+
+    .card2:hover {
+      /*efecto tarjeta aumentada*/
+      transform: scale(1.1);
+      background: rgb(141, 188, 206);
+      color: black;
+      transition: all 0.7s;
+    }
+
+    .card3 {
+      background: cornflowerblue;
+      color: white;
+      padding: 1rem;
+      height: 100%;
+      transform: scale(1);
+      transition: all 1s;
+      position: relative;
+    }
+
+    .card3:hover {
+      /*efecto tarjeta aumentada*/
+      transform: scale(1.1);
+      background: rgb(141, 188, 206);
+      color: black;
+      transition: all 0.7s;
+    }
+
     .text-center {
       text-align: center;
     }
@@ -151,7 +187,29 @@
       right: 0;
       left: 0;
       bottom: 0;
-      display: flex;
+      display: none;
+    }
+
+    .hover2 {
+      border: dashed red;
+      background-color: rgb(112, 155, 172);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      display: none;
+    }
+
+    .hover3 {
+      border: dashed red;
+      background-color: rgb(112, 155, 172);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      display: none;
     }
 
     .img2 {
@@ -219,38 +277,55 @@
       </div>
 
       <div class="OPCIONES">
-        <div class="card">
-          <h4 class="titulotarjetas text-center">MENSUAL</h4>
-          <h6>*CARGO MENSUAL*</h6>
-          <h5>$11.99</h5>
-          <br />
-          <p>
-            ➤ Todo lo que incluye gratis más acceso ilimitado a estrenos y
-            contenido premium para darte aún más variedad.
-          </p>
-          <p>
-            ➤ Disfruta de nuestra variedad de disciplinas: Fuerza, HIIT,
-            Cardio, Yoga, Meditación y Más.
-          </p>
-          <p>➤ Cancela cuando quieras sin costo.</p>
+
+        <div class="card2">
+          <div class="cardContenido">
+            <h4 class="titulotarjetas text-center">MENSUAL</h4>
+            <h6>*CARGO MENSUAL*</h6>
+            <h5>$11.99</h5>
+            <br />
+            <p>
+              ➤ Todo lo que incluye gratis más acceso ilimitado a estrenos y
+              contenido premium para darte aún más variedad.
+            </p>
+            <p>
+              ➤ Disfruta de nuestra variedad de disciplinas: Fuerza, HIIT,
+              Cardio, Yoga, Meditación y Más.
+            </p>
+            <p>➤ Cancela cuando quieras sin costo.</p>
+          </div>
+          <div class='hover2'>
+            <p class="textojava">SUSCRIBETE ES TOTALMENTE</p>
+          </div>
         </div>
+
       </div>
+
+
       <div class="OPCIONES">
-        <div class="card">
-          <h4 class="titulotarjetas text-center">ANUAL</h4>
-          <h6>*CARGO ANUAL*</h6>
-          <h5>$88.99</h5>
-          <br />
-          <p>
-            ➤ Todo lo que incluye gratis y mensual más acceso ilimitado a
-            estrenos y contenido premium para darte aún más variedad.
-          </p>
-          <p>➤ ¡Ahorra más de 50 dólares al pagar la anualidad!</p>
-          <p>➤ Cancela cuando quieras sin costo.</p>
+
+        <div class="card3">
+          <div class="cardContenido">
+            <h4 class="titulotarjetas text-center">ANUAL</h4>
+            <h6>*CARGO ANUAL*</h6>
+            <h5>$88.99</h5>
+            <br />
+            <p>
+              ➤ Todo lo que incluye gratis y mensual más acceso ilimitado a
+              estrenos y contenido premium para darte aún más variedad.
+            </p>
+            <p>➤ ¡Ahorra más de 50 dólares al pagar la anualidad!</p>
+            <p>➤ Cancela cuando quieras sin costo.</p>
+          </div>
+          <div class='hover3'>
+            <p class="textojava">SUSCRIBETE ES TOTALMENTE</p>
+          </div>
         </div>
+
       </div>
-    </div>
-    <br />
+
+
+      <br />
   </section>
 
   <br />
@@ -321,8 +396,12 @@
   </footer>
 
   <script>
-    const card = document.querySelector('.card')
-    const hover = document.querySelector('.hover')
+    const card = document.querySelector('.card') // esto se convierte en arreglo
+    const card2 = document.querySelector('.card2') // esto se convierte en arreglo
+    const card3 = document.querySelector('.card3') // esto se convierte en arreglo
+    const hover = document.querySelector('.hover') // esto se convierte en arreglo
+    const hover2 = document.querySelector('.hover2') // esto se convierte en arreglo
+    const hover3 = document.querySelector('.hover3') // esto se convierte en arreglo
 
     card.addEventListener('mouseover', function (e) {
       hover.style.display = 'flex';
@@ -331,6 +410,88 @@
     card.addEventListener('mouseout', function (e) {
       hover.style.display = 'none';
     })
+
+    card2.addEventListener('mouseover', function (e) {
+      hover2.style.display = 'flex';
+    })
+
+    card2.addEventListener('mouseout', function (e) {
+      hover2.style.display = 'none';
+    })
+
+    card3.addEventListener('mouseover', function (e) {
+      hover3.style.display = 'flex';
+    })
+
+    card3.addEventListener('mouseout', function (e) {
+      hover3.style.display = 'none';
+    })
+
+    /*
+    card.forEach(tarjeta => tarjeta.addEventListener("mouseover", (event) => {
+       //hover.style.display = 'flex';
+       switch (event.target.id) {
+         case "1":
+           hover[0].style.display = "flex";
+           hover[0].style.width = "max-content";
+           break;
+         case "2":
+           hover[1].style.display = "flex";
+           break;
+         case "3":
+           hover[2].style.display = "flex";
+           break;
+       }
+ 
+     }))
+
+    card.forEach(tarjeta => tarjeta.addEventListener("mouseout", (event) => {
+ 
+      switch (event.target.id) {
+        case "1":
+          hover[0].style.display = "none";
+          break;
+        case "2":
+          hover[1].style.display = "none";
+          break;
+        case "3":
+          hover[2].style.display = "none";
+          break;
+      }
+ 
+    }))
+
+    card.forEach(c => {
+      c.addEventListener("mouseover", entrar);
+      c.addEventListener("mouseout", () => { console.log("sali") });
+    })
+
+    function entrar(e) {
+      console.log(`#${e.target.id} .cardContenido`)
+      //const cardContent =document.querySelector(`#${e.target.id} .cardContenido`);
+      const cardContent = document.querySelector(`#${e.target.id}`);
+      cardContent.style.display = "none";
+      const hover = document.querySelector(` .hover`);
+      hover.style.width = "FitContent";
+      console.log(cardContent)
+      // cardContent.style.display="flex";
+    }
+
+    function tipoCasos(id, tipo){
+      switch (id) {
+        case "1":
+          hover[0].style.display = tipo;
+          break;
+        case "2":
+          hover[1].style.display = tipo;
+          break;
+        case "3":
+          hover[2].style.display = tipo;
+          break;
+      }
+
+    }
+    */
   </script>
 </body>
 
