@@ -10,9 +10,10 @@
   <link rel="icon" href="../img/DAW PROYECYO - UG GYMNASIO.ico" type="imagen/x-icon">
 
   <style>
-    *{
+    * {
       text-align: center
     }
+
     /* SELECTOR DE CLASE */
     .seccionCentral {
       display: flex;
@@ -89,7 +90,7 @@
       letter-spacing: 5px;
     }
 
-    .seccionLateral{
+    .seccionLateral {
       flex-basis: 20%;
       display: flex;
       flex-direction: column;
@@ -98,25 +99,25 @@
       justify-content: space-between;
     }
 
-    .seccionLateral_dos{
+    .seccionLateral_dos {
       width: 100%;
     }
 
-    .generarOrden, .eliminarOrden{
+    .generarOrden,
+    .eliminarOrden {
       width: 100%;
       padding: 10px;
     }
 
-    .generarOrden:hover{
+    .generarOrden:hover {
       background-color: greenyellow;
     }
 
-    .eliminarOrden:hover{
+    .eliminarOrden:hover {
       background-color: red
-
     }
 
-    table{
+    table {
       width: 100%;
     }
   </style>
@@ -242,26 +243,26 @@
           <button class="generarOrden" type="button">Generar orden</button>
         </div>
       </aside>
-  </main>
+    </main>
 
-  <!-- * Contenedor final -->
-  <footer class="footer">
-    <div class="icons">
-      <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="https://i.imgur.com/1D7E4XS.png"
-          alt="facebook" /></a>
-      <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img src="https://i.imgur.com/OOKo2eY.png"
-          alt="linkedin" /></a>
-      <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img src="https://i.imgur.com/Lvgb2b7.png"
-          alt="instagram" /></a>
-      <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
-          src="https://i.imgur.com/dm1ety7.png" alt="whatsapp" /></a>
+    <!-- * Contenedor final -->
+    <footer class="footer">
+      <div class="icons">
+        <a href="https://es-la.facebook.com/UdeGuayaquil/"><img src="https://i.imgur.com/1D7E4XS.png"
+            alt="facebook" /></a>
+        <a href="https://ec.linkedin.com/school/universidad-de-guayaquil/"><img src="https://i.imgur.com/OOKo2eY.png"
+            alt="linkedin" /></a>
+        <a href="https://www.instagram.com/universidad_guayaquil/?hl=es"><img src="https://i.imgur.com/Lvgb2b7.png"
+            alt="instagram" /></a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B593980879335&text&app_absent=0"><img
+            src="https://i.imgur.com/dm1ety7.png" alt="whatsapp" /></a>
+        <br />
+      </div>
+      <p class="Copyright-UG">
+        UG-GYM &copy; 2022, Universidad De Guayaquil - Carrera Software
+      </p>
       <br />
-    </div>
-    <p class="Copyright-UG">
-      UG-GYM &copy; 2022, Universidad De Guayaquil - Carrera Software
-    </p>
-    <br />
-  </footer>
+    </footer>
   </div>
   <script>
     // INICIALIZO UN CONTADOR
@@ -292,14 +293,15 @@
     // CARRITO
     document.querySelector(".generarOrden").addEventListener("click", () => {
       const numeroDeOrdenes = document.querySelector(".cuerpoTabla").children.length
-      if(numeroDeOrdenes <= 0){
+      if (numeroDeOrdenes <= 0) {
         alert(`Hay ${numeroDeOrdenes} elementos. No se puede procesar la orden.`)
-      }else{
-        alert(`La orden con los ${numeroDeOrdenes} elementos ha sido procesada, por favor retirar en tienda.`)}
+      } else {
+        alert(`La orden con los ${numeroDeOrdenes} elementos ha sido procesada, por favor retirar en tienda.`)
       }
+    }
     )
 
-    document.querySelector(".eliminarOrden").addEventListener("click", () => {alert(`Función a futuro de implementar`)})
+    document.querySelector(".eliminarOrden").addEventListener("click", () => { alert(`Función a futuro de implementar`) })
 
     // FUNCIONES
     function sumar(objeto, campoId) {
@@ -340,9 +342,9 @@
       tabla.appendChild(fila);
     }
 
-    function agregar(e){
+    function agregar(e) {
       // SE CONSIGUE EL NOMBRE DEL ID
-      const nombreProducto = e.target.id.replace("carrito","");
+      const nombreProducto = e.target.id.replace("carrito", "");
       const nombreIdImput = "cantidad" + nombreProducto;
       // SE CONSIGUE EL VALOR DEL CAMPO DE TEXTO
       const cantidad = document.querySelector(`#${nombreIdImput}`).value;
@@ -350,4 +352,5 @@
     }
   </script>
 </body>
+
 </html>
